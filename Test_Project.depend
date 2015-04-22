@@ -1,4 +1,7 @@
 # depslib dependency file v1.0
-1385320478 source:c:\c++\test_project\main.cpp
+1429693727 source:c:\c++\test_project\main.cpp
 	<iostream>
+	"queue.hpp"
+
+1429693778 c:\c++\test_project\queue.hpp
 
