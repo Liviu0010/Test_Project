@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <unordered_map>
-#include <queue>
+#include "queue.hpp"
 
 using namespace std;
 
@@ -43,12 +43,14 @@ public:
         return true;
     }
 
-    /* TODO - rewrite this using our queue class
-    void BFS(int src)
+    /* TODO - rewrite this using our queue class*/
+    vector<int> BFS(int src)
     {
-        queue<int> q;
+        Queue<int> q;
+        vector<int> bfs;
         bool visited[mAdjList.size()];
         fill(visited, visited + mAdjList.size(), false);
+
 
         q.push(src);
         visited[src] = true;
@@ -56,7 +58,8 @@ public:
         while (!q.empty())
         {
             x = q.front(), q.pop();
-            cout << mMap[x] << " ";
+            //cout << mMap[x] << " ";
+            bfs.push_back(x);
             for (int i = 0; i < mAdjList[x].size(); i++)
                 if (!visited[mAdjList[x][i]])
                 {
@@ -64,7 +67,9 @@ public:
                     q.push(mAdjList[x][i]);
                 }
         }
-    }*/
+
+        return bfs;
+    }
 };
 
 
